@@ -28,3 +28,10 @@ test('career page renders timeline entries', async () => {
   assert.match(html, /Career Timeline/);
   assert.equal((html.match(/data-timeline-item/g) || []).length, 3);
 });
+
+test('projects page renders three cards', async () => {
+  const html = await readPage('projects/index.html');
+  assert.match(html, /data-section="projects"/);
+  assert.equal((html.match(/data-project-card/g) || []).length, 3);
+  assert.ok(html.includes('href="https://example.com"'));
+});

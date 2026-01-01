@@ -172,6 +172,39 @@ h1 {
   margin: 0 0 8px;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0f151f;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(83, 211, 209, 0.5);
+  box-shadow: 0 12px 24px rgba(7, 12, 18, 0.5);
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.card-link {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
 @keyframes rise {
   from {
     opacity: 0;

@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    name: 'Project Atlas',
+    description: 'A scalable service platform with clear observability.',
+    link: 'https://example.com'
+  },
+  {
+    name: 'Signal Console',
+    description: 'A monitoring dashboard for distributed systems.',
+    link: 'https://example.com'
+  },
+  {
+    name: 'Edge Toolkit',
+    description: 'A set of utilities for performant edge deployments.',
+    link: 'https://example.com'
+  }
+];
+---
+
+<BaseLayout title="Projects" label="WORK">
+  <section class="section" data-section="projects">
+    <div class="cards">
+      {projects.map((project) => (
+        <article class="card" data-project-card>
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <a class="card-link" href={project.link} target="_blank" rel="noreferrer">
+            View Project
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
