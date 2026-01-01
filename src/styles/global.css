@@ -205,6 +205,57 @@ h1 {
   font-size: 0.85rem;
 }
 
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #0f151f;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(83, 211, 209, 0.6);
+  box-shadow: 0 0 0 2px rgba(83, 211, 209, 0.15);
+}
+
+.contact-form button {
+  justify-self: start;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(7, 12, 18, 0.4);
+}
+
 @keyframes rise {
   from {
     opacity: 0;

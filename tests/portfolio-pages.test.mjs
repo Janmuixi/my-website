@@ -35,3 +35,10 @@ test('projects page renders three cards', async () => {
   assert.equal((html.match(/data-project-card/g) || []).length, 3);
   assert.ok(html.includes('href="https://example.com"'));
 });
+
+test('contact page renders mailto form', async () => {
+  const html = await readPage('contact/index.html');
+  assert.match(html, /data-section="contact"/);
+  assert.match(html, /action="mailto:hello@example.com"/);
+  assert.match(html, /name="email"/);
+});

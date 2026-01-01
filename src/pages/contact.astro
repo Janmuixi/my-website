@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" label="CONNECT">
+  <section class="section" data-section="contact">
+    <form class="contact-form" action="mailto:hello@example.com" method="post" enctype="text/plain">
+      <label>
+        Name
+        <input type="text" name="name" placeholder="Your name" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" placeholder="you@email.com" required />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" placeholder="Tell me about your project"></textarea>
+      </label>
+      <button type="submit">Send Email</button>
+    </form>
+  </section>
+</BaseLayout>
