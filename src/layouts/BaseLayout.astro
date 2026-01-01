@@ -2,7 +2,7 @@
 import '../styles/global.css';
 
 const { title, label } = Astro.props;
-const pathname = Astro.url.pathname;
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const navItems = [
   { href: '/', label: 'About' },
   { href: '/career', label: 'Career' },

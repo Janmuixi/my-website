@@ -42,3 +42,8 @@ test('contact page renders mailto form', async () => {
   assert.match(html, /action="mailto:hello@example.com"/);
   assert.match(html, /name="email"/);
 });
+
+test('career page highlights active nav item', async () => {
+  const html = await readPage('career/index.html');
+  assert.match(html, /href="\/career"[^>]+aria-current="page"/);
+});
