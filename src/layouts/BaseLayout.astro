@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+
+const { title, label } = Astro.props;
+const pathname = Astro.url.pathname;
+const navItems = [
+  { href: '/', label: 'About' },
+  { href: '/career', label: 'Career' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' }
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="logo" href="/">Your Name</a>
+      <nav class="nav">
+        {navItems.map((item) => (
+          <a
+            class={`nav-link ${pathname === item.href ? 'is-active' : ''}`}
+            href={item.href}
+            aria-current={pathname === item.href ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </header>
+    <main class="page">
+      <div class="page-title">
+        <span class="page-label">{label}</span>
+        <h1>{title}</h1>
+      </div>
+      <slot />
+    </main>
+  </body>
+</html>
