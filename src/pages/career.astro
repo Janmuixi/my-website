@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const roles = [
+  {
+    period: '2022 — Present',
+    role: 'Senior Software Engineer',
+    company: 'Company One',
+    summary: 'Built scalable services and improved reliability across teams.'
+  },
+  {
+    period: '2019 — 2022',
+    role: 'Software Engineer',
+    company: 'Company Two',
+    summary: 'Delivered web apps and performance optimizations.'
+  },
+  {
+    period: '2016 — 2019',
+    role: 'Junior Engineer',
+    company: 'Company Three',
+    summary: 'Maintained systems and automated workflows.'
+  }
+];
+---
+
+<BaseLayout title="Career" label="EXPERIENCE">
+  <section class="section" data-section="career">
+    <h2>Career Timeline</h2>
+    <div class="timeline">
+      {roles.map((entry) => (
+        <div class="timeline-item" data-timeline-item>
+          <div class="timeline-meta">
+            <span>{entry.period}</span>
+            <strong>{entry.role}</strong>
+          </div>
+          <div class="timeline-body">
+            <h3>{entry.company}</h3>
+            <p>{entry.summary}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

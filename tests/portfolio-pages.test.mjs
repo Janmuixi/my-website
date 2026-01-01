@@ -21,3 +21,10 @@ test('about page renders hero and nav', async () => {
   assert.match(html, /href="\/career"/);
   assert.match(html, /aria-current="page"/);
 });
+
+test('career page renders timeline entries', async () => {
+  const html = await readPage('career/index.html');
+  assert.match(html, /data-section="career"/);
+  assert.match(html, /Career Timeline/);
+  assert.equal((html.match(/data-timeline-item/g) || []).length, 3);
+});
