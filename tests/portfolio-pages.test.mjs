@@ -29,6 +29,11 @@ test('career page renders timeline entries', async () => {
   assert.equal((html.match(/data-timeline-item/g) || []).length, 3);
 });
 
+test('career page renders HTML in summaries', async () => {
+  const html = await readPage('career/index.html');
+  assert.match(html, /<em>reliability<\/em>/);
+});
+
 test('projects page renders three cards', async () => {
   const html = await readPage('projects/index.html');
   assert.match(html, /data-section="projects"/);

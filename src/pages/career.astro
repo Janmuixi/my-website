@@ -1,25 +1,28 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const roles = [
   {
-    period: '2022 — Present',
-    role: 'Senior Software Engineer',
-    company: 'Company One',
-    summary: 'Built scalable services and improved reliability across teams.'
+    period: "2024 — Present",
+    role: "Tech Lead / Senior Software Engineer",
+    company: "Flanks",
+    summary:
+      "At Flanks, I found an incredible opportunity: a startup with great data but no solid product. I joined as a Senior Software Engineer and was soon promoted to Tech Lead to drive an ambitious project focused on building products around our data. <br><br> Leading this effort deepened my understanding of financial data, data providers, and microservices, with a strong focus on <em>reliability</em>. It was made possible by an incredible team of finance experts and exceptional engineers.",
   },
   {
-    period: '2019 — 2022',
-    role: 'Software Engineer',
-    company: 'Company Two',
-    summary: 'Delivered web apps and performance optimizations.'
+    period: "2021 — 2023",
+    role: "Software Engineer",
+    company: "Docplanner",
+    summary:
+      "Docplanner was my first large-scale tech company experience. I learned how big teams operate and grew alongside engineers who built and scaled a solid product. <br><br> I contributed to the migration from Vue 2 to Vue 2 with the Composition API, then to Vue 3. I also joined a volunteer effort to migrate a large part of the codebase from JavaScript to TypeScript.",
   },
   {
-    period: '2016 — 2019',
-    role: 'Junior Engineer',
-    company: 'Company Three',
-    summary: 'Maintained systems and automated workflows.'
-  }
+    period: "2018 — 2021",
+    role: "Software Engineer",
+    company: "Itequia",
+    summary:
+      "At Itequia, I got my first opportunity to enter the professional tech world. I started as an intern managing the company’s Azure AD and Azure services, and soon moved into development on several projects. <br><br> My most important projects there were for <b>Zurich Insurance</b>, where I led the implementation of a search engine and a portal to manage files in SharePoint.",
+  },
 ];
 ---
 
@@ -27,18 +30,20 @@ const roles = [
   <section class="section" data-section="career">
     <h2>Career Timeline</h2>
     <div class="timeline">
-      {roles.map((entry) => (
-        <div class="timeline-item" data-timeline-item>
-          <div class="timeline-meta">
-            <span>{entry.period}</span>
-            <strong>{entry.role}</strong>
+      {
+        roles.map((entry) => (
+          <div class="timeline-item" data-timeline-item>
+            <div class="timeline-meta">
+              <span>{entry.period}</span>
+              <strong>{entry.role}</strong>
+            </div>
+            <div class="timeline-body">
+              <h3>{entry.company}</h3>
+              <p set:html={entry.summary} />
+            </div>
           </div>
-          <div class="timeline-body">
-            <h3>{entry.company}</h3>
-            <p>{entry.summary}</p>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 </BaseLayout>
