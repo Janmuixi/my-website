@@ -120,6 +120,17 @@ h1 {
   font-size: 0.7rem;
 }
 
+.about-photo {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin: 16px 0 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
 .badges {
   display: flex;
   flex-wrap: wrap;

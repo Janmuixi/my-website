@@ -18,6 +18,10 @@ test('about page renders hero and nav', async () => {
   const html = await readPage('index.html');
   assert.match(html, /data-section="about"/);
   assert.match(html, /About Me/);
+  assert.match(
+    html,
+    /<img[^>]+src="https:\/\/ca\.slack-edge\.com\/THCHHT70F-U06J360PP3R-c23625439b03-512"/
+  );
   assert.match(html, /href="\/career"/);
   assert.match(html, /aria-current="page"/);
 });
@@ -44,7 +48,7 @@ test('projects page renders three cards', async () => {
 test('contact page renders mailto form', async () => {
   const html = await readPage('contact/index.html');
   assert.match(html, /data-section="contact"/);
-  assert.match(html, /action="mailto:hello@example.com"/);
+  assert.match(html, /action="mailto:janmuixi7@gmail.com"/);
   assert.match(html, /name="email"/);
 });
 
