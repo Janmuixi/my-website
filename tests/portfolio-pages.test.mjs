@@ -38,11 +38,14 @@ test('career page renders HTML in summaries', async () => {
   assert.match(html, /<em>reliability<\/em>/);
 });
 
-test('projects page renders three cards', async () => {
+test('projects page renders four cards', async () => {
   const html = await readPage('projects/index.html');
   assert.match(html, /data-section="projects"/);
-  assert.equal((html.match(/data-project-card/g) || []).length, 3);
-  assert.ok(html.includes('href="https://example.com"'));
+  assert.equal((html.match(/data-project-card/g) || []).length, 4);
+  assert.ok(html.includes('href="https://seshat-app.com"'));
+  assert.ok(html.includes('href="https://eloria-rsvp.com"'));
+  assert.ok(html.includes('href="https://github.com/Janmuixi/mojo-plugin-vue"'));
+  assert.ok(html.includes('href="https://github.com/Janmuixi/hyprmonitors"'));
 });
 
 test('contact page renders mailto form', async () => {
